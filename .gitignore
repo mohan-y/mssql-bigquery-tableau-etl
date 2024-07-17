@@ -4,3 +4,6 @@ venv/
 .env
 airflow_home/logs/
 airflow_home/unittests.cfg
+analytics-390815-2d2332940f24.json
+analytics-390815-2d2332940f24.json:Zone.Identifier
+*.lnk
