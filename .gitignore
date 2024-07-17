@@ -1,0 +1,6 @@
+*.pyc
+__pycache__/
+venv/
+.env
+airflow_home/logs/
+airflow_home/unittests.cfg
