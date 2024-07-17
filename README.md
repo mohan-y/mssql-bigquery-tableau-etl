@@ -23,32 +23,32 @@ mssql-bigquery-tableau-etl/
 ## Setup
 
 1. **Clone the repository**:
-    \`\`\`sh
+    ```sh
     git clone https://github.com/your_username/mssql-bigquery-tableau-etl.git
     cd mssql-bigquery-tableau-etl
-    \`\`\`
+    ```
 
 2. **Set up a virtual environment**:
-    \`\`\`sh
+    ```sh
     python3 -m venv venv
     source venv/bin/activate
-    \`\`\`
+    ```
 
 3. **Install dependencies**:
-    \`\`\`sh
+    ```sh
     pip install -r requirements.txt
-    \`\`\`
+    ```
 
 4. **Configure Airflow**:
     - Ensure your Airflow \`airflow.cfg\` is properly configured.
     - Set the \`AIRFLOW_HOME\` environment variable to point to the \`airflow_home\` directory.
 
 5. **Run Airflow**:
-    \`\`\`sh
+    ```sh
     airflow db init
     airflow webserver --port 8080
     airflow scheduler
-    \`\`\`
+    ```
 
 ## Usage
 
