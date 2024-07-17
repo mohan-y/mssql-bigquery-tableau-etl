@@ -4,6 +4,7 @@ This project contains an ETL pipeline using Apache Airflow to extract data from 
 
 ## Project Structure
 
+///
 mssql-bigquery-tableau-etl/
 │
 ├── dags/
@@ -17,6 +18,7 @@ mssql-bigquery-tableau-etl/
 ├── .gitignore                               # Git ignore file
 ├── analytics-390815-2d2332940f24.json       # Google Cloud service account key (not to be committed)
 └── README.md                                # Project README file
+///
 
 ## Setup
 
