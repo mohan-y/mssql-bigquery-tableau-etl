@@ -125,13 +125,43 @@ transform_data = BigQueryExecuteQueryOperator(
     task_id='transform_data',
     sql="""
     SELECT
-        SalesOrderID,
-        COUNT(SalesOrderDetailID) AS NumberOfDetails,
-        SUM(LineTotal) AS TotalLineTotal
+        s.SalesOrderDetailID AS sales_line_id,
+        s.SalesOrderID AS sales_order_id,
+        so.CustomerID AS customer_id,
+        t.Name AS territory_name,
+        t.CountryRegionCode AS country_code,
+        so.OrderDate AS order_date,
+        ROUND(s.UnitPrice*(1- s.UnitPriceDiscount), 2) AS unit_price,
+        s.OrderQty AS quantity,
+        ROUND(s.LineTotal, 2) AS amount,
+        s.ProductID,
+        p.Name AS product_name,
+        ROUND(p.StandardCost, 2) AS cost,
+        ROUND(p.ListPrice, 2) AS list_price,
+        sc.Name AS subcategory,
+        c.Name AS category
     FROM
-        `analytics-390815.adventure_works.salesorderdetail`
-    GROUP BY
-        SalesOrderID
+        `analytics-390815.adventure_works.salesorderdetail` s
+    LEFT JOIN
+        `analytics-390815.adventure_works.product` p
+    ON
+        s.ProductID = p.ProductID
+    LEFT JOIN 
+        `analytics-390815.adventure_works.productsubcategory` sc
+    ON
+        p.ProductSubcategoryID = sc.ProductSubcategoryID
+    LEFT JOIN
+        `analytics-390815.adventure_works.productcategory` c 
+    ON
+        sc.ProductCategoryID = c.ProductCategoryID
+    LEFT JOIN
+        `analytics-390815.adventure_works.salesorderheader` so 
+    ON
+        s.SalesOrderID = so.SalesOrderID
+    LEFT JOIN
+        `analytics-390815.adventure_works.salesterritory` t
+    ON
+        so.TerritoryID = t.TerritoryID
     """,
     use_legacy_sql=False,
     destination_dataset_table='analytics-390815.adventure_works.transformed_sales_data',
