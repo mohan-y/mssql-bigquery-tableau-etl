@@ -8,16 +8,17 @@ This project contains an ETL pipeline using Apache Airflow to extract data from 
 mssql-bigquery-tableau-etl/
 │
 ├── dags/
-│   └── mssql_to_bigquery_to_tableau_dag.py   # DAG for the ETL process
+│ └── mssql_to_bigquery_to_tableau_dag.py   # DAG for the ETL process
 │
 ├── airflow_home/
-│   ├── airflow.cfg                          # Airflow configuration file
-│   ├── airflow-webserver.pid                # Airflow webserver PID
-│   └── airflow.db                           # Airflow SQLite database (not to be committed)
+│ ├── airflow.cfg                           # Airflow configuration file
+│ ├── airflow-webserver.pid                 # Airflow webserver PID
+│ ├── airflow.db                            # Airflow SQLite database 
+│ └── airflow_config.py                     # Airflow additional configuration
 │
-├── .gitignore                               # Git ignore file
-├── analytics-390815-2d2332940f24.json       # Google Cloud service account key (not to be committed)
-└── README.md                                # Project README file
+├── .gitignore                              # Git ignore file
+├── analytics-390815-2d2332940f24.json      # Google Cloud service account key (not to be committed)
+└── README.md                               # Project README file
 ```
 
 ## Setup
@@ -40,8 +41,8 @@ mssql-bigquery-tableau-etl/
     ```
 
 4. **Configure Airflow**:
-    - Ensure your Airflow \`airflow.cfg\` is properly configured.
-    - Set the \`AIRFLOW_HOME\` environment variable to point to the \`airflow_home\` directory.
+    - Ensure your Airflow `airflow.cfg` is properly configured.
+    - Set the `AIRFLOW_HOME` environment variable to point to the \`airflow_home\` directory.
 
 5. **Run Airflow**:
     ```sh
