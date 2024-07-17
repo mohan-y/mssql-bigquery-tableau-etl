@@ -16,7 +16,7 @@ mssql-bigquery-tableau-etl/
 │ ├── airflow.db                            # Airflow SQLite database (not tracked)
 │ └── airflow_config.py                     # Airflow additional configuration
 │
-├── images/                                 # Directory for images
+├── image/                    
 │ └── dag_structure.png                     # DAG structure image
 │
 ├── .gitignore                              # Git ignore file
