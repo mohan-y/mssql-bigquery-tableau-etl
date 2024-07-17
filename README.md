@@ -53,5 +53,5 @@ mssql-bigquery-tableau-etl/
 ## Usage
 
 - **Trigger the DAG**:
-  - Access the Airflow web interface at \`http://localhost:8080\`.
-  - Enable and trigger the \`mssql_to_bigquery_to_tableau\` DAG.
+  - Access the Airflow web interface at `http://localhost:8080`.
+  - Enable and trigger the `mssql_to_bigquery_to_tableau` DAG.
