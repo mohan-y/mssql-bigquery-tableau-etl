@@ -28,7 +28,7 @@ mssql-bigquery-tableau-etl/
 
 Here is an overview of the DAG structure for this ETL process:
 
-![DAG Structure](images/dag_structure.PNG)
+![DAG Structure](image/dag_structure.PNG)
 
 ## Setup
 
