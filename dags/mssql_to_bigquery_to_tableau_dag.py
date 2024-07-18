@@ -127,10 +127,10 @@ transform_data = BigQueryExecuteQueryOperator(
     SELECT
         s.SalesOrderDetailID AS sales_line_id,
         s.SalesOrderID AS sales_order_id,
+        so.OrderDate AS order_date,
         so.CustomerID AS customer_id,
         t.Name AS territory,
         t.CountryRegionCode AS country_code,
-        so.OrderDate AS order_date,
         ROUND(s.UnitPrice*(1- s.UnitPriceDiscount), 2) AS price,
         s.OrderQty AS quantity,
         ROUND(s.UnitPrice*(1- s.UnitPriceDiscount)*s.OrderQty , 2) AS amount,
