@@ -51,7 +51,7 @@ Here is an overview of the DAG structure for this ETL process:
 
 4. **Configure Airflow**:
     - Ensure your Airflow `airflow.cfg` is properly configured.
-    - Set the `AIRFLOW_HOME` environment variable to point to the \`airflow_home\` directory.
+    - Set the `AIRFLOW_HOME` environment variable to point to the `airflow_home` directory.
 
 5. **Run Airflow**:
     ```sh
