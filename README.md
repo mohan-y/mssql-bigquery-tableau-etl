@@ -12,14 +12,23 @@ mssql-bigquery-tableau-etl/
 │
 ├── airflow_home/
 │ ├── airflow.cfg                           # Airflow configuration file
-│ ├── airflow-webserver.pid                 # Airflow webserver PID
-│ ├── airflow.db                            # Airflow SQLite database 
+│ ├── airflow-webserver.pid                 # Airflow webserver PID (not tracked)
+│ ├── airflow.db                            # Airflow SQLite database (not tracked)
 │ └── airflow_config.py                     # Airflow additional configuration
 │
+├── image/                    
+│ └── dag_structure.png                     # DAG structure image
+│
 ├── .gitignore                              # Git ignore file
-├── analytics-390815-2d2332940f24.json      # Google Cloud service account key (not to be committed)
+├── analytics-390815-2d2332940f24.json      # Google Cloud service account key (not tracked)
 └── README.md                               # Project README file
 ```
+
+## DAG Structure
+
+Here is an overview of the DAG structure for this ETL process:
+
+![DAG Structure](image/dag_structure.PNG)
 
 ## Setup
 
