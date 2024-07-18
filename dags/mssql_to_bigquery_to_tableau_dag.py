@@ -131,12 +131,12 @@ transform_data = BigQueryExecuteQueryOperator(
         so.CustomerID AS customer_id,
         t.Name AS territory,
         t.CountryRegionCode AS country_code,
-        ROUND(s.UnitPrice*(1- s.UnitPriceDiscount), 2) AS price,
+        s.UnitPrice*(1- s.UnitPriceDiscount) AS price,
         s.OrderQty AS quantity,
-        ROUND(s.UnitPrice*(1- s.UnitPriceDiscount)*s.OrderQty , 2) AS amount,
+        s.LineTotal AS amount,
         s.ProductID AS product_id,
         p.Name AS product_name,
-        ROUND(p.StandardCost, 2) AS cost,
+        p.StandardCost AS cost,
         sc.Name AS subcategory,
         c.Name AS category
     FROM
